@@ -3,7 +3,7 @@ describe('Site Loads and displays content', () => {
     cy.visit('/')
   });
 
-  it('is expected that it displays a Headers', () => {
+  it('is expected that it displays a Header', () => {
     cy.get('#header').should('be.visible')
   });
 })
