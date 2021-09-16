@@ -10,7 +10,7 @@ describe("Display a list of characters", () => {
     cy.get("#header").should("contain", "Character List");
   });
 
-  it("is expected to display a list of six charachters", () => {
-    cy.get("#character-list").should("have.length", 6);
+  it("is expected to display a list of ten charachters", () => {
+    cy.get("#character-list").children().should("have.length", 10);
   });
 });

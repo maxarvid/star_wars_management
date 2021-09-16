@@ -6,7 +6,7 @@ const App = () => {
   return (
     <Container>
       <h1 id="header">Star Wars Character List</h1>
-      <div id="character-list">
+      <div>
         <CharacterList />
       </div>
     </Container>

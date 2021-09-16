@@ -17,7 +17,7 @@ const CharacterList = () => {
 
   const characterList = characters.map((character) => {
     return (
-      <Item>
+      <Item key={character.url} className="character-item">
         <Item.Content>
           <Item.Header className="name">{character.name}</Item.Header>
         </Item.Content>
@@ -25,7 +25,7 @@ const CharacterList = () => {
     );
   });
 
-  return <Item.Group>{characterList}</Item.Group>;
+  return <Item.Group id="character-list">{characterList}</Item.Group>;
 };
 
 export default CharacterList;
