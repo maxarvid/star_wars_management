@@ -3,7 +3,7 @@ import React from 'react'
 const App = () => {
   return (
     <div>
-      <h1 id="header">I Compiled with this h1 header!</h1>
+      <h1 id="header">Star Wars Character List</h1>
     </div>
   )
 }
