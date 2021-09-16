@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Character from "./Character";
+import { Item } from "semantic-ui-react";
+// import Character from "./Character";
 
 const CharacterList = () => {
-  const { characters, setCharacters } = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   const fetchData = async () => {
     const response = await axios.get("https://swapi.dev/api/people");
-    setCharacters(response.results);
+    setCharacters(response.data.results);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  return <div></div>;
+  const characterList = characters.map((character) => {
+    return (
+      <Item>
+        <Item.Content>
+          <Item.Header className="name">{character.name}</Item.Header>
+        </Item.Content>
+      </Item>
+    );
+  });
+
+  return <Item.Group>{characterList}</Item.Group>;
 };
 
 export default CharacterList;
